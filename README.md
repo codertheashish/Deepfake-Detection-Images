@@ -5,6 +5,12 @@ An AI-powered Deepfake Detection System that analyzes facial images and predicts
 The project features a modern web interface built with HTML, CSS, and JavaScript, along with a Python Flask backend for image analysis.
 
 ---
+## Live Demo 
+
+```bash
+https://codertheashish.github.io/Deepfake-Detection-Images
+
+```
 
 ## ✨ Features
 
