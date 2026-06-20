@@ -93,12 +93,6 @@ pip install flask tensorflow opencv-python numpy pillow
 python app.py
 ```
 
-Open:
-
-```text
-http://localhost:5000
-```
-
 ---
 
 ## 📸 Features Preview
@@ -132,7 +126,8 @@ This project is licensed under the MIT License.
 
 ### Ashish Kumar Prajapati
 
-* GitHub: https://github.com/codertheashish
+* GitHub:
+  https://github.com/codertheashish
 
 ---
 
