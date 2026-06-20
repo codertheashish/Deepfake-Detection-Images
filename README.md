@@ -71,7 +71,7 @@ Deepfake-Detection/
 ### Clone Repository
 
 ```bash
-https://github.com/codertheashish/Deepfake-Detection-Image
+https://github.com/codertheashish/Deepfake-Detection-Images
 
 ```
 
