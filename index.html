@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeepFake Detector</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <!-- App Styles -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ===================== NAVIGATION ===================== -->
+    <nav>
+        <div class="nav-logo">
+            <div class="logo-dot">🔬</div>
+            DEEPFAKE<span style="color:#6366f1">·AI</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#">Image</a>
+            <a href="#">Video</a>
+            <a href="#">Logout</a>
+        </div>
+        <div class="nav-badge">v2.0 BETA</div>
+    </nav>
+
+    <!-- ===================== MAIN ===================== -->
+    <main>
+
+        <!-- CONTROL PANEL -->
+        <div class="glass control-panel">
+            <div class="panel-title">⚙ Controls</div>
+
+            <!-- Upload area -->
+            <div class="upload-area" id="drop-zone">
+                <div class="upload-icon-wrap">📁</div>
+                <h3>Upload Image</h3>
+                <p>JPG · PNG · WEBP<br />Click or drag &amp; drop</p>
+                <input type="file" id="file-input" accept="image/*" />
+            </div>
+
+            <!-- Selected file name -->
+            <div class="file-info" id="file-info">
+                📎 <span id="file-name"></span>
+            </div>
+
+            <!-- Analyze button -->
+            <button class="analyze-btn" id="analyze-btn" disabled>Analyze Image</button>
+
+            <div class="divider"></div>
+
+            <!-- Model info -->
+            <div class="model-row">
+                <span class="model-key">Model</span>
+                <span class="model-val">EfficientNet-B0</span>
+            </div>
+            <div class="model-row">
+                <span class="model-key">Backend</span>
+                <span class="model-val"><span class="status-dot"></span>Online</span>
+            </div>
+            <div class="model-row">
+                <span class="model-key">Input Size</span>
+                <span class="model-val">224 × 224</span>
+            </div>
+            <div class="model-row">
+                <span class="model-key">Threshold</span>
+                <span class="model-val">0.50</span>
+            </div>
+        </div>
+
+        <!-- INPUT IMAGE PANEL -->
+        <div class="glass img-panel">
+            <div class="img-panel-label">
+                <div class="label-dot" style="background:#6366f1"></div>
+                Input Image
+            </div>
+            <div class="img-placeholder" id="input-placeholder">
+                <span>🖼</span>awaiting input...
+            </div>
+            <img class="img-preview" id="input-img" alt="Input" />
+        </div>
+
+        <!-- ANALYSIS OUTPUT PANEL -->
+        <div class="glass img-panel">
+            <div class="img-panel-label">
+                <div class="label-dot" style="background:#ec4899"></div>
+                Analysis Output
+            </div>
+
+            <div class="output-content">
+
+                <!-- Placeholder -->
+                <div class="img-placeholder" id="output-placeholder">
+                    <span>🔍</span>result appears here...
+                </div>
+
+                <!-- Result image + face box overlay -->
+                <div class="result-img-wrap" id="result-img-wrap">
+                    <img class="face-box-img" id="output-img" alt="Output" />
+                    <svg class="face-box-svg" id="face-svg" viewBox="0 0 400 300"></svg>
+                    <div class="scan-line" id="scan-line"></div>
+                </div>
+
+                <!-- Verdict badge -->
+                <div class="verdict-badge" id="verdict-badge">
+                    <div class="verdict-icon" id="verdict-icon"></div>
+                    <div class="verdict-text">
+                        <div class="verdict-label" id="verdict-label"></div>
+                        <div class="verdict-sub"   id="verdict-sub"></div>
+                    </div>
+                    <!-- Confidence ring -->
+                    <div class="conf-ring-wrap">
+                        <svg width="50" height="50" viewBox="0 0 50 50">
+                            <circle cx="25" cy="25" r="20"
+                                fill="none"
+                                stroke="rgba(255,255,255,0.08)"
+                                stroke-width="4" />
+                            <circle cx="25" cy="25" r="20"
+                                fill="none"
+                                id="ring-circle"
+                                stroke="#6366f1"
+                                stroke-width="4"
+                                stroke-dasharray="125.6"
+                                stroke-dashoffset="125.6"
+                                stroke-linecap="round"
+                                style="transition: stroke-dashoffset 1.2s cubic-bezier(0.16,1,0.3,1)" />
+                        </svg>
+                        <div class="conf-pct" id="conf-pct">0%</div>
+                    </div>
+                </div>
+
+                <!-- Progress bar -->
+                <div class="prog-wrap" id="prog-wrap">
+                    <div class="prog-fill" id="prog-fill"></div>
+                </div>
+
+                <!-- Probability stats -->
+                <div class="stats-row" id="stats-row">
+                    <div class="stat-card">
+                        <div class="s-label">Fake Prob.</div>
+                        <div class="s-val danger" id="s-fake">—</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="s-label">Real Prob.</div>
+                        <div class="s-val safe" id="s-real">—</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ===================== SCRIPTS ===================== -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
