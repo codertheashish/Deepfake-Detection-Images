@@ -133,3 +133,5 @@ This project is licensed under the MIT License.
 ---
 
 ⭐ If you found this project useful, consider giving it a star on GitHub.
+
+<img width="1451" height="1084" alt="Deepfake_detection" src="https://github.com/user-attachments/assets/fe1354e3-8993-4220-96c2-8240e74e2460" />
