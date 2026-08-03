@@ -126,12 +126,14 @@ This project is licensed under the MIT License.
 
 ### Ashish Kumar Prajapati
 
-* GitHub:
-  
-  https://github.com/codertheashish
-
+- GitHub :
+[codertheashish](https://github.com/codertheashish)
+- Linkedin :
+[codertheashish](https://www.linkedin.com/in/codertheashish/)
+- Instagram :
+[codertheashish](https://www.instagram.com/codertheashish/)
 ---
 
-⭐ If you found this project useful, consider giving it a star on GitHub.
+⭐ If you like this portfolio, don't forget to give it a star on GitHub.
 
-<img width="1451" height="1084" alt="Deepfake_detection" src="https://github.com/user-attachments/assets/fe1354e3-8993-4220-96c2-8240e74e2460" />
+<img width="601" height="437" alt="Deepfake_detection" src="https://github.com/user-attachments/assets/fe1354e3-8993-4220-96c2-8240e74e2460" />
